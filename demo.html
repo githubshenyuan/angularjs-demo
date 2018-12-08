@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="assets/js/angular/angular.js"></script>
+    <script>
+
+        // 创建moudle1
+        var rootMoudle = angular.module('moudle1', []);
+        rootMoudle.controller("controller1", function ($scope) {
+            $scope.name = "moudle1"
+        });
+
+        // 创建moudle2
+        var m2 = angular.module('moudle2', []);
+        m2.controller("controller2", function ($scope) {
+            $scope.name = "moudle2"
+        });
+
+
+        // 页面加载完成后,再加载模块
+        angular.element(document).ready(function() {
+            // 手工绑定 moudle1 模块到 div1 上
+            angular.bootstrap(document.getElementById("div1"),["moudle1"]);
+            // 手工绑定 moudle1 模块到 div1 上
+            angular.bootstrap(document.getElementById("div2"),["moudle2"]);
+        });
+
+    </script>
+
+    <head>
+<body>
+<div id="div1"  ng-controller="controller1">div1:{{name}}</div>
+<div id="div2"  ng-controller="controller2">div2:{{name}}</div>
+</body>
+
+</html>

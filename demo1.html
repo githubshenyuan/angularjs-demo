@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div id="ab" ng-controller="WelcomeController">
+    <span ng-bind="greeting"></span>
+</div>
+<script type="text/javascript">
+    var app = angular.module('demo', []).controller('WelcomeController', function ($scope) {
+        $scope.greeting = 'Welcome!';
+    });
+    angular.bootstrap(document.getElementById("ab"), ['demo']);
+</script>
+</body>
+</html>

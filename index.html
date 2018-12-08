@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html id="boot-app" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script data-main="assets/js/main.js" src="assets/js/requirejs/require.js"></script>
+</head>
+<body>
+<p>你好 ，页面</p>
+<div ng-app="myApp" ng-controller="parent_myCtl">
+    父标签：<p><span>{{name}}</span></p>
+    <div ng-controller="son_myCtl">
+        子标签：<p><span>{{name}}</span></p>
+    </div>
+</div>
+
+</body>
+</html>
