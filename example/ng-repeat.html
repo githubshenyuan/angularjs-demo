@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../assets/js/angular/angular.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var app = angular.module('student', []);
+            // 这次定义一个数组students，里面有三个学生Jack、Mary、Tom
+            var students = [{name: "Jack",
+                age: 18,
+                sex: 'male',
+                displayComment: false
+            }, {
+                    name: "Mary",
+                age: 16,
+                sex: 'female',
+                displayComment: true
+            },
+                {
+                    name: "Tom",
+                    age: 17,
+                    sex: 'male',
+                    displayComment: true
+                }];
+            app.controller('myController', function () {
+                    this.students = students;
+            });
+        })();
+    </script>
+</head>
+<body ng-app="student">
+    <div ng-controller="myController as myCtrl">
+        <!--使用ng-repeat，优雅的迭代显示所有学生信息-->
+        <div ng-repeat="stu in myCtrl.students">
+            <p>Student{{myCtrl.students.indexOf(stu) + 1}}:</p>
+            <p>Name:{{stu.name}}</p>
+            <p>Age:{{stu.age}} will be {{stu.age+15}} after 15 years.</p>
+            <p>Sex:{{stu.sex}}</p>
+            <p ng-show="stu.displayComment">Comments:This will not display on page.</p>
+            <br />
+        </div>
+    </div>
+</body>
+</html>

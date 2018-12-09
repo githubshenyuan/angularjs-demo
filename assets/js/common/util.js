@@ -5,9 +5,10 @@ define(['angular'],function (angular) {
     util.factory('$$util',function () {
         return {
             al: function () {
-                alert("执行 util 服务")
+                console.log("执行utils 模块 al() ，"+"顺序："+count());
             }
         };
 
     });
+    console.log("utils  模块加载，"+"顺序："+count());
 });

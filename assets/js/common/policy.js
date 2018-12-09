@@ -1,4 +1,4 @@
 define(['angular','business'],function (angular,business) {
    var a = '123';
-    alert("加载 policy");
+    console.log("policy 模块加载，"+"顺序："+count());
 });
